@@ -1,32 +1,8 @@
 /**
  * mintest - a minimal C unit testing framework, inspired by minunit
  *
- * A sample test:
- *
- * #include "mintest.h"
- *
- * mt_test(test1) {
- *     mt_assert(1 == 1);
- *     return 0;
- * }
- * mt_test(test2) {
- *     mt_fail("I fail");
- *     return 0;
- * }
- * void suite1() {
- *     mt_run_test(test1);
- * }
- * void suite2() {
- *     mt_run_test(test2):
- * }
- * void all_tests() {
- *     mt_run_suite(suite1);
- *     mt_run_suite(suite2);
- * }
- * int main(void) {
- *     mt_main(all_tests);
- *     return mt_fail_count;
- * }
+ * Copyright 2013, Marshall Culpepper
+ * Licensed under the Apache License, Version 2.0
  */
 
 #ifndef MINTEST_H
