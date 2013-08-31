@@ -104,7 +104,7 @@ extern int mt_fail_count;
 extern int mt_pass_count;
 
 #if defined(__cplusplus)
-{
+}
 #endif // defined(__cplusplus)
 
 #endif
