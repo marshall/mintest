@@ -1,3 +1,12 @@
+#!/usr/bin/env python
+#
+# mintest - a minimal C unit testing framework, inspired by minunit
+#
+# Copyright 2013, Marshall Culpepper
+# Licensed under the Apache License, Version 2.0
+#
+# waf tool for configuring and building mintest
+
 import os
 
 this_dir = os.path.abspath(os.path.dirname(__file__))
