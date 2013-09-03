@@ -5,6 +5,7 @@ from waflib.Build import BuildContext
 
 top = '.'
 out = 'build'
+tests = ('test_asserts', 'test_json', 'test_nl', 'test_printf')
 
 def options(opt):
     opt.load('mintest', tooldir='.')
@@ -20,12 +21,13 @@ def build(bld):
               name='mintest',
               source=bld.env.MINTEST_SOURCES)
 
-    bld.program(target='all_tests',
-                source=bld.path.ant_glob('tests/**/*.c'),
-                use=['mintest'])
+    for test in tests:
+        bld.program(target=test,
+                    source='tests/%s.c' % test,
+                    use=['mintest'])
 
 def test(ctx):
-    ctx(rule='./all_tests', always=True)
+    ctx(rule='../tests/all_tests.py', always=True)
 
 class Test(BuildContext):
     cmd = 'test'
