@@ -65,5 +65,13 @@ class TestPrintf(OutputTest):
         for line in lines:
             self.assertTrue(line.startswith('[CUSTOM]'))
 
+class TestTrace(OutputTest):
+    binary = os.path.join(build_dir, 'test_trace')
+
+    def runTest(self):
+        self.assertEqual(self.rc, 0)
+        lines = self.out.splitlines()
+        self.assertTrue(any(['TRACE' in line and 'trace me' in line for line in lines]))
+
 if __name__ == '__main__':
     unittest.main()

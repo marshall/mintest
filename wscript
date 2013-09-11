@@ -11,7 +11,7 @@ from waflib.Build import BuildContext
 
 top = '.'
 out = 'build'
-tests = ('test_asserts', 'test_json', 'test_nl', 'test_printf')
+tests = ('test_asserts', 'test_json', 'test_nl', 'test_printf', 'test_trace')
 
 def options(opt):
     opt.load('mintest', tooldir='.')
